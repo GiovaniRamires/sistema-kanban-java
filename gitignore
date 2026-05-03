@@ -1,0 +1,45 @@
+# Arquivos compilados
+*.class
+*.jar
+*.war
+*.ear
+
+# Diretórios de build
+/build/
+/out/
+/target/
+/dist/
+
+# NetBeans
+/nbproject/private/
+/nbproject/Makefile-*.mk
+/nbproject/Package-*.bash
+/nbbuild/
+/dist/
+nbactions.xml
+nb-configuration.xml
+manifest.mf
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
