@@ -106,6 +106,5 @@ private static final String SENHA   = "sua_senha";
 | Nome | RGM |
 |---|---|
 | Giovani Ramires Cardoso dos Santos | 46104828 |
-| Nicolas Henrique | 42647444 |
 | Arthur Oliveira Souza | 42941661 |
 | Arthur Ramires Quirino | 46092323 |
