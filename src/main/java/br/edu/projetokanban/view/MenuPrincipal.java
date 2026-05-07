@@ -10,6 +10,8 @@ import br.edu.projetokanban.model.Bug.Severidade;
 import br.edu.projetokanban.model.Feature.ValorNegocio;
 import br.edu.projetokanban.model.Feature.Complexidade;
 import br.edu.projetokanban.model.Tarefa.Status;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import br.edu.projetokanban.service.ProjetoService;
 import br.edu.projetokanban.service.TarefaService;
 
@@ -19,7 +21,13 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 
-    private Scanner sc = new Scanner(System.in);
+    static {
+        try {
+            System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        } catch (Exception e) { /* ignora */ }
+    }
+
+    private Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
     private ProjetoService projetoService = new ProjetoService();
     private TarefaService tarefaService = new TarefaService();
 
@@ -30,9 +38,9 @@ public class MenuPrincipal {
             System.out.println("\n========== SISTEMA KANBAN ==========");
             System.out.println("1 - Gerenciar Projetos");
             System.out.println("2 - Gerenciar Tarefas");
-            System.out.println("3 - RelatÛrios");
+            System.out.println("3 - Relat√≥rios");
             System.out.println("0 - Sair");
-            System.out.print("OpÁ„o: ");
+            System.out.print("Op√ß√£o: ");
             opcao = lerInt();
 
             switch (opcao) {
@@ -40,7 +48,7 @@ public class MenuPrincipal {
                 case 2: menuTarefas(); break;
                 case 3: menuRelatorios(); break;
                 case 0: System.out.println("Encerrando..."); break;
-                default: System.out.println("OpÁ„o inv·lida.");
+                default: System.out.println("Op√ß√£o inv√°lida.");
             }
 
         } while (opcao != 0);
@@ -57,7 +65,7 @@ public class MenuPrincipal {
             System.out.println("3 - Atualizar projeto");
             System.out.println("4 - Excluir projeto");
             System.out.println("0 - Voltar");
-            System.out.print("OpÁ„o: ");
+            System.out.print("Op√ß√£o: ");
             opcao = lerInt();
 
             try {
@@ -67,7 +75,7 @@ public class MenuPrincipal {
                     case 3: atualizarProjeto(); break;
                     case 4: excluirProjeto(); break;
                     case 0: break;
-                    default: System.out.println("OpÁ„o inv·lida.");
+                    default: System.out.println("Op√ß√£o inv√°lida.");
                 }
             } catch (SQLException e) {
                 System.out.println("Erro no banco de dados: " + e.getMessage());
@@ -124,9 +132,9 @@ public class MenuPrincipal {
             System.out.println("3 - Cadastrar Feature");
             System.out.println("4 - Mover status da tarefa");
             System.out.println("5 - Excluir tarefa");
-            System.out.println("6 - Ver histÛrico de eventos");
+            System.out.println("6 - Ver hist√≥rico de eventos");
             System.out.println("0 - Voltar");
-            System.out.print("OpÁ„o: ");
+            System.out.print("Op√ß√£o: ");
             opcao = lerInt();
 
             try {
@@ -138,7 +146,7 @@ public class MenuPrincipal {
                     case 5: excluirTarefa();    break;
                     case 6: verEventos();       break;
                     case 0: break;
-                    default: System.out.println("OpÁ„o inv·lida.");
+                    default: System.out.println("Op√ß√£o inv√°lida.");
                 }
             } catch (SQLException e) {
                 System.out.println("Erro no banco de dados: " + e.getMessage());
@@ -166,15 +174,15 @@ public class MenuPrincipal {
     private void cadastrarBug() throws SQLException {
         System.out.print("ID do projeto: ");
         int projetoId = lerInt();
-        System.out.print("TÌtulo: ");
+        System.out.print("T√≠tulo: ");
         String titulo = sc.nextLine();
-        System.out.print("DescriÁ„o: ");
+        System.out.print("Descri√ß√£o: ");
         String descricao = sc.nextLine();
-        System.out.print("Respons·vel: ");
+        System.out.print("Respons√°vel: ");
         String responsavel = sc.nextLine();
 
         System.out.println("Severidade: 1-BAIXA  2-MEDIA  3-ALTA  4-CRITICA");
-        System.out.print("OpÁ„o: ");
+        System.out.print("Op√ß√£o: ");
         int sevOpc = lerInt();
         Severidade severidade;
         if (sevOpc == 1)      severidade = Severidade.BAIXA;
@@ -182,7 +190,7 @@ public class MenuPrincipal {
         else if (sevOpc == 3) severidade = Severidade.ALTA;
         else                  severidade = Severidade.CRITICA;
 
-        System.out.print("… reproduzÌvel? (1-Sim / 2-N„o): ");
+        System.out.print("√â reproduz√≠vel? (1-Sim / 2-N√£o): ");
         boolean reproduzivel = lerInt() == 1;
 
         tarefaService.cadastrarBug(projetoId, titulo, descricao,
@@ -192,15 +200,15 @@ public class MenuPrincipal {
     private void cadastrarFeature() throws SQLException {
         System.out.print("ID do projeto: ");
         int projetoId = lerInt();
-        System.out.print("TÌtulo: ");
+        System.out.print("T√≠tulo: ");
         String titulo = sc.nextLine();
-        System.out.print("DescriÁ„o: ");
+        System.out.print("Descri√ß√£o: ");
         String descricao = sc.nextLine();
-        System.out.print("Respons·vel: ");
+        System.out.print("Respons√°vel: ");
         String responsavel = sc.nextLine();
 
-        System.out.println("Valor de negÛcio: 1-BAIXO  2-MEDIO  3-ALTO");
-        System.out.print("OpÁ„o: ");
+        System.out.println("Valor de neg√≥cio: 1-BAIXO  2-MEDIO  3-ALTO");
+        System.out.print("Op√ß√£o: ");
         int valOpc = lerInt();
         ValorNegocio valorNegocio;
         if (valOpc == 1)      valorNegocio = ValorNegocio.BAIXO;
@@ -208,7 +216,7 @@ public class MenuPrincipal {
         else                  valorNegocio = ValorNegocio.ALTO;
 
         System.out.println("Complexidade: 1-SIMPLES  2-MEDIA  3-COMPLEXA");
-        System.out.print("OpÁ„o: ");
+        System.out.print("Op√ß√£o: ");
         int compOpc = lerInt();
         Complexidade complexidade;
         if (compOpc == 1) complexidade = Complexidade.SIMPLES;
@@ -224,7 +232,7 @@ public class MenuPrincipal {
         int id = lerInt();
 
         System.out.println("Novo status: 1-FAZER  2-FAZENDO  3-FEITO");
-        System.out.print("OpÁ„o: ");
+        System.out.print("Op√ß√£o: ");
         int stOpc = lerInt();
         Status novoStatus;
         if (stOpc == 1) novoStatus = Status.FAZER;
@@ -250,11 +258,11 @@ public class MenuPrincipal {
         int opcao;
 
         do {
-            System.out.println("\n--- RELAT”RIOS ---");
+            System.out.println("\n--- RELAT√ìRIOS ---");
             System.out.println("1 - Backlog priorizado");
-            System.out.println("2 - Tarefas por respons·vel");
+            System.out.println("2 - Tarefas por respons√°vel");
             System.out.println("0 - Voltar");
-            System.out.print("OpÁ„o: ");
+            System.out.print("Op√ß√£o: ");
             opcao = lerInt();
 
             try {
@@ -262,7 +270,7 @@ public class MenuPrincipal {
                     case 1: relatorioBacklog();      break;
                     case 2: relatorioResponsavel();  break;
                     case 0: break;
-                    default: System.out.println("OpÁ„o inv·lida.");
+                    default: System.out.println("Op√ß√£o inv√°lida.");
                 }
             } catch (SQLException e) {
                 System.out.println("Erro no banco de dados: " + e.getMessage());
@@ -284,7 +292,7 @@ public class MenuPrincipal {
     }
 
     private void relatorioResponsavel() throws SQLException {
-        System.out.print("Nome do respons·vel: ");
+        System.out.print("Nome do respons√°vel: ");
         String nome = sc.nextLine();
         tarefaService.relatorioResponsavel(nome);
     }
@@ -296,7 +304,7 @@ public class MenuPrincipal {
         try {
             valor = Integer.parseInt(sc.nextLine().trim());
         } catch (NumberFormatException e) {
-            System.out.println("Digite um n˙mero v·lido.");
+            System.out.println("Digite um n√∫mero v√°lido.");
         }
         return valor;
     }

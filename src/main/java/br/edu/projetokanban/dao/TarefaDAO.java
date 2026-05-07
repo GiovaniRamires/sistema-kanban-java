@@ -34,16 +34,16 @@ public class TarefaDAO {
                 ps.setString(4, bug.getDescricao());
                 ps.setString(7, bug.getSeveridade().name());
                 ps.setBoolean(8, bug.isReproduzivel());
-                ps.setNull(9, Types.VARCHAR);  // valor_negocio n„o se aplica a Bug
-                ps.setNull(10, Types.VARCHAR); // complexidade n„o se aplica a Bug
+                ps.setNull(9, Types.VARCHAR);  // valor_negocio n√£o se aplica a Bug
+                ps.setNull(10, Types.VARCHAR); // complexidade n√£o se aplica a Bug
 
             } else if (tarefa instanceof Feature) {
                 Feature feature = (Feature) tarefa;
                 ps.setString(2, "FEATURE");
                 ps.setString(3, feature.getTitulo());
                 ps.setString(4, feature.getDescricao());
-                ps.setNull(7, Types.VARCHAR);  // severidade n„o se aplica a Feature
-                ps.setNull(8, Types.BOOLEAN);  // reproduzivel n„o se aplica a Feature
+                ps.setNull(7, Types.VARCHAR);  // severidade n√£o se aplica a Feature
+                ps.setNull(8, Types.BOOLEAN);  // reproduzivel n√£o se aplica a Feature
                 ps.setString(9, feature.getValorNegocio().name());
                 ps.setString(10, feature.getComplexidade().name());
             }

@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
     private static final String URL = "jdbc:mysql://localhost:3306/kanban_db";
-    private static final String USUARIO = "SEU_USUÁRIO";
-    private static final String SENHA = "SUA_SENHA";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "root";
     
     private ConnectionFactory (){}
     

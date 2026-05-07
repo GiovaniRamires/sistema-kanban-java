@@ -6,10 +6,10 @@ public class Projeto {
     private String nome;
     private boolean ativo;
     
-    //Construtor usado pelo usu·rio
+    //Construtor usado pelo usu√°rio
     public Projeto(String nome){
         if(nome == null || nome.trim().isEmpty()){
-            throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
+            throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
         }
         this.nome = nome.trim();
         this.ativo = true;
@@ -35,7 +35,7 @@ public class Projeto {
 
     public void setNome(String nome) {
         if(nome == null || nome.trim().isEmpty()){
-        throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
+        throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
         }
         this.nome = nome.trim();
     }
@@ -50,6 +50,6 @@ public class Projeto {
     
     @Override
     public String toString(){
-        return "[" + id + "] " + nome + (ativo ? "ativo" : "inativo"); 
+        return "[" + id + "] " + nome + " " + (ativo ? "ativo" : "inativo"); 
     }
 }

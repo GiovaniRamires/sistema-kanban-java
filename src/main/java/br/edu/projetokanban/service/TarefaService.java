@@ -46,7 +46,7 @@ public class TarefaService {
     public Tarefa buscarPorId(int id) throws SQLException {
         Tarefa t = tarefaDAO.buscarPorId(id);
         if (t == null) {
-            throw new IllegalArgumentException("Tarefa n„o encontrada para o ID: " + id);
+            throw new IllegalArgumentException("Tarefa n√£o encontrada para o ID: " + id);
         }
         return t;
     }
@@ -67,7 +67,7 @@ public class TarefaService {
     public void excluir(int id) throws SQLException {
         buscarPorId(id); 
         tarefaDAO.excluir(id);
-        System.out.println("Tarefa excluÌ≠da com sucesso!");
+        System.out.println("Tarefa exclu√≠da com sucesso!");
     }
 
     public List<Tarefa> relatorioBacklog() throws SQLException {
@@ -104,7 +104,7 @@ public class TarefaService {
         buscarPorId(tarefaId);
         List<EventoTarefa> eventos = eventoDAO.listarPorTarefa(tarefaId);
 
-        System.out.println("\n===== HistÛrico da Tarefa ID " + tarefaId + " =====");
+        System.out.println("\n===== Hist√≥rico da Tarefa ID " + tarefaId + " =====");
         if (eventos.isEmpty()) {
             System.out.println("Nenhum evento registrado.");
         } else {

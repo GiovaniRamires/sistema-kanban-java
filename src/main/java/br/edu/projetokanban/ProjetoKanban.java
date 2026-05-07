@@ -1,4 +1,4 @@
-
+package br.edu.projetokanban;
 
 import br.edu.projetokanban.controller.KanbanController;
 public class ProjetoKanban {

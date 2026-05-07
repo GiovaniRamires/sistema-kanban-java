@@ -12,7 +12,7 @@ public class ProjetoService {
 
     public void cadastrar(String nome) throws SQLException {
         if (nome == null || nome.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nome do projeto È obrigatÛrio.");
+            throw new IllegalArgumentException("Nome do projeto √© obrigat√≥rio.");
         }
         Projeto projeto = new Projeto(nome);
         projetoDAO.inserir(projeto);
@@ -26,7 +26,7 @@ public class ProjetoService {
     public Projeto buscarPorId(int id) throws SQLException {
         Projeto p = projetoDAO.buscarPorId(id);
         if (p == null) {
-            throw new IllegalArgumentException("Projeto n„o encontrado para o ID: " + id);
+            throw new IllegalArgumentException("Projeto n√£o encontrado para o ID: " + id);
         }
         return p;
     }
@@ -41,6 +41,6 @@ public class ProjetoService {
     public void excluir(int id) throws SQLException {
         buscarPorId(id); 
         projetoDAO.excluir(id);
-        System.out.println("Projeto excluÌdo com sucesso!");
+        System.out.println("Projeto exclu√≠do com sucesso!");
     }
 }
