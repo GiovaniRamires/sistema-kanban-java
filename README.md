@@ -108,3 +108,4 @@ private static final String SENHA   = "sua_senha";
 | Giovani Ramires Cardoso dos Santos | 46104828 |
 | Arthur Oliveira Souza | 42941661 |
 | Arthur Ramires Quirino | 46092323 |
+| Eliseu Carlos Lopes Pareschi | 45876029 |
