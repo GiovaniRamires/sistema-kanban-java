@@ -9,7 +9,7 @@ public class Projeto {
     //Construtor usado pelo usu·rio
     public Projeto(String nome){
         if(nome == null || nome.trim().isEmpty()){
-            throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
+            throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
         }
         this.nome = nome.trim();
         this.ativo = true;
@@ -35,7 +35,7 @@ public class Projeto {
 
     public void setNome(String nome) {
         if(nome == null || nome.trim().isEmpty()){
-        throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
+        throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
         }
         this.nome = nome.trim();
     }

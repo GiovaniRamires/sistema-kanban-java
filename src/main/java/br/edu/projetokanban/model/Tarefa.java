@@ -18,7 +18,7 @@ public abstract class Tarefa {
     
     public Tarefa(int projetoId, String titulo, String descricao, String responsavel){
         if(titulo == null || titulo.trim().isEmpty()){
-            throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
+            throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
         }
         this.titulo = titulo.trim();
         this.projetoId = projetoId;
@@ -51,7 +51,7 @@ public abstract class Tarefa {
 
     public void setTitulo(String titulo) {
         if(titulo == null || titulo.trim().isEmpty()){
-            throw new IllegalArgumentException("Nome do projeto n√£o pode ser vazio");
+            throw new IllegalArgumentException("Nome do projeto n„o pode ser vazio");
         }
         this.titulo = titulo.trim();
     }
@@ -82,7 +82,7 @@ public abstract class Tarefa {
     
     @Override
     public String toString(){
-        return "[" + id + "]" + titulo + " Status " + status + " Respons√°vel " + responsavel + " Prioridade: " + calcularPrioridade()  
+        return "[" + id + "]" + titulo + " Status " + status + " Respons·vel " + responsavel + " Prioridade: " + calcularPrioridade()  
                + " Prazo " + estimarPrazo() + "dias";
                 
     }

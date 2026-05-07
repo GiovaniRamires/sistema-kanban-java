@@ -139,7 +139,7 @@ public class TarefaDAO {
     
     
     public List<Tarefa> listarBacklogPriorizado() throws SQLException {
-        String sql = "SELECT * FROM tarefas WHERE status <> 'DONE' "
+        String sql = "SELECT * FROM tarefas WHERE status <> 'FEITO' "
                    + "ORDER BY "
                    + "CASE tipo "
                    + "  WHEN 'BUG' THEN "

@@ -223,7 +223,7 @@ public class MenuPrincipal {
         System.out.print("ID da tarefa: ");
         int id = lerInt();
 
-        System.out.println("Novo status: 1-TODO  2-DOING  3-DONE");
+        System.out.println("Novo status: 1-FAZER  2-FAZENDO  3-FEITO");
         System.out.print("Opção: ");
         int stOpc = lerInt();
         Status novoStatus;
