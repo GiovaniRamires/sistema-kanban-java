@@ -1,14 +1,7 @@
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\controller\KanbanController.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\dao\ConnectionFactory.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\dao\EventoTarefaDAO.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\dao\ProjetoDAO.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\dao\TarefaDAO.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\model\Bug.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\model\EventoTarefa.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\model\Feature.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\model\Projeto.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\model\Tarefa.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\ProjetoKanban.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\service\ProjetoService.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\service\TarefaService.java
-C:\Users\Giovani\Downloads\ProjetoKanban (1)\ProjetoKanban\src\main\java\br\edu\projetokanban\view\MenuPrincipal.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\KanbanSpringApplication.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Bug.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Feature.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Projeto.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Tarefa.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\repository\ProjetoRepository.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\repository\TarefaRepository.java
