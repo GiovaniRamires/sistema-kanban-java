@@ -11,4 +11,5 @@ import br.com.giovaniramires.kanban_spring.model.Tarefa;
 public interface TarefaRepository extends JpaRepository <Tarefa, Long> {
     List<Tarefa> findByStatus(Tarefa.Status status);
     List<Tarefa> findByProjetoId(Long projetoId);
+    List<Tarefa> findByResponsavel(String responsavel);
 } 
