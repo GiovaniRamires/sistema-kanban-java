@@ -7,59 +7,57 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import br.com.giovaniramires.kanban_spring.dto.CriarProjetoDTO;
 import br.com.giovaniramires.kanban_spring.model.Projeto;
-import br.com.giovaniramires.kanban_spring.repository.ProjetoRepository;
-import jakarta.servlet.http.HttpServletRequest;
+import br.com.giovaniramires.kanban_spring.service.ProjetoService;
+
 
 @RestController
 @RequestMapping("/projeto")
 public class ProjetoController {
-    
+
     @Autowired
-    private ProjetoRepository projetoRepository;
-    
-@PostMapping("/")
-public ResponseEntity<Projeto> criar(@RequestBody Projeto projetoModel, HttpServletRequest request){
-    System.out.println("Chegou no ProjetoService" + request.getAttribute("idProjeto"));
-    var idProjeto = request.getAttribute("idProjeto");
-    projetoModel.setId((Long)idProjeto);
-    var projeto = this.projetoRepository.save(projetoModel);
-    return ResponseEntity.status(HttpStatus.OK).body(projeto);
-}
+    private ProjetoService projetoService;
 
-@GetMapping("/list")
-public List<Projeto> listarTodos(HttpServletRequest request) {
-    var projetos = this.projetoRepository.findAll();
-    System.out.println(projetos);
-    return projetos;
-}
+    @PostMapping
+    public ResponseEntity<Projeto> criarProjeto(@RequestBody CriarProjetoDTO dto){
+        var projetoCriado = projetoService.criar(dto.getNome());
+        return ResponseEntity.status(HttpStatus.CREATED).body(projetoCriado);
 
-@GetMapping("/list/{id}")
-public List<Projeto> listarPorId(@PathVariable Long id) {
-    var projeto = this.projetoRepository.findById(id).orElseThrow(() -> new RuntimeException("Projeto não encontrado"));
-    return List.of(projeto);
-}
+    }
 
-@PutMapping("/update/{id}")
-public ResponseEntity<Projeto> atualizar(@PathVariable Long id, @RequestBody Projeto projetoModel) {
-    var projeto = this.projetoRepository.findById(id).orElseThrow(() -> new RuntimeException("Projeto não encontrado"));
-    projeto.setNome(projetoModel.getNome());
-    projeto.setAtivo(projetoModel.isAtivo());
-    var projetoAtualizado = this.projetoRepository.save(projeto);
-    return ResponseEntity.status(HttpStatus.OK).body(projetoAtualizado);
-}
+    @GetMapping
+    public ResponseEntity<List<Projeto>> listarTodos() {
+        return ResponseEntity.ok(projetoService.listarTodos());
+    }
 
-@DeleteMapping("/delete/{id}")
-public ResponseEntity<Void> deletar(@PathVariable Long id) {
-    var projeto = this.projetoRepository.findById(id).orElseThrow(() -> new RuntimeException("Projeto não encontrado"));
-    this.projetoRepository.delete(projeto);
-    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-}
+    @GetMapping ("/ativos")
+    public ResponseEntity<List<Projeto>> listarAtivos() {
+        return ResponseEntity.ok(projetoService.listarAtivos());
+    }
 
-public ResponseEntity<Void> arquivar(@PathVariable Long id) {
-    var projeto = this.projetoRepository.findById(id).orElseThrow(() -> new RuntimeException("Projeto não encontrado"));
-    projeto.setAtivo(false);
-    this.projetoRepository.save(projeto);
-    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-}
+    @GetMapping("/{id}")
+    public ResponseEntity<Projeto> listarPorId(@PathVariable Long id) {
+        var buscaDeId = projetoService.buscarPorId(id);
+        return ResponseEntity.status(HttpStatus.OK).body(buscaDeId);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody CriarProjetoDTO dto) {
+        var novoNome = dto.getNome();
+        projetoService.atualizar(id, novoNome);
+        return ResponseEntity.status(HttpStatus.OK).body(novoNome);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletar(@PathVariable Long id) {
+        projetoService.deletar(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{id}/arquivar")
+    public ResponseEntity<Void> arquivar(@PathVariable Long id) {
+        projetoService.arquivar(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();   
+     }
 }
