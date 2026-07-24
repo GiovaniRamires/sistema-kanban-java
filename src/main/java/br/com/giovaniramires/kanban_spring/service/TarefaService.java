@@ -2,6 +2,8 @@ package br.com.giovaniramires.kanban_spring.service;
 
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,11 +53,14 @@ public class TarefaService {
     }
 
     public void moverStatus(Long tarefaId, Status novoStatus) {
+        if(novoStatus == null){
+            throw new RuntimeException("Status inválido");
+        } 
         var tarefa = tarefaRepository.findById(tarefaId)
-                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
-
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));   
         tarefa.setStatus(novoStatus);
         tarefaRepository.save(tarefa);
+        
     }
 
     public void excluir(Long tarefaId) {

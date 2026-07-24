@@ -16,13 +16,17 @@ public class ProjetoService {
 
     public Projeto criar(String nome){
         Projeto projeto = new Projeto(nome);
-        System.out.println("Projeto de nome:" + nome + "criado com sucesso");
+        System.out.println("Projeto de nome:" + nome + " criado com sucesso");
         return projetoRepository.save(projeto);
         
     }
 
     public List<Projeto> listarAtivos(){
         return projetoRepository.findByAtivoTrue();
+    }
+
+    public List<Projeto> listarTodos(){
+        return projetoRepository.findAll();
     }
 
     public Projeto buscarPorId (Long id){
@@ -33,20 +37,20 @@ public class ProjetoService {
         Projeto projeto = buscarPorId(id);
         projeto.setNome(novoNome);
         projetoRepository.save(projeto);
-        System.out.println("Projeto de id:" + id + "atualizado com sucesso");
+        System.out.println("Projeto de id:" + id + " atualizado com sucesso");
     }
 
     public void arquivar(Long id){
         Projeto projeto = buscarPorId(id);
         projeto.setAtivo(false);
         projetoRepository.save(projeto);
-        System.out.println("Projeto de id:" + id + "arquivado com sucesso");
+        System.out.println("Projeto de id:" + id + " arquivado com sucesso");
     }
 
     public void deletar (Long id){
         Projeto projeto = buscarPorId(id);
         projetoRepository.delete(projeto);
-        System.out.println("Projeto de id:" + id + "deletado com sucesso");
+        System.out.println("Projeto de id:" + id + " deletado com sucesso");
     }
 
 }
