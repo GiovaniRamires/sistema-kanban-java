@@ -1,3 +1,9 @@
+> 🚀 **Versão moderna disponível:** este projeto foi migrado para 
+> Spring Boot com API REST, JWT e testes unitários. 
+> [Ver branch spring-boot →](https://github.com/GiovaniRamires/sistema-kanban-java/tree/spring-boot)
+
+---
+
 # Sistema Kanban — Java + MySQL
 
 Sistema de gerenciamento de tarefas no estilo Kanban com persistência em banco de dados, arquitetura em camadas (Model · DAO · Service · View) e suporte a dois tipos de tarefa: **Bug** e **Feature**.
