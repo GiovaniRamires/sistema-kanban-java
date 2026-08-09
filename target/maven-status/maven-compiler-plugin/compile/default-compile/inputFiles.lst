@@ -1,6 +1,10 @@
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\config\SecurityConfig.java
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\controller\ProjetoController.java
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\controller\TarefaController.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\dto\CadastrarBugDTO.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\dto\CadastrarFeatureDTO.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\dto\CriarProjetoDTO.java
+C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\dto\MoverStatusDTO.java
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\KanbanSpringApplication.java
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Bug.java
 C:\Users\Giovani\OneDrive\Desktop\kanban-spring\kanban-spring\src\main\java\br\com\giovaniramires\kanban_spring\model\Feature.java
